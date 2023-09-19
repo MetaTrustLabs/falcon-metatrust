@@ -1,0 +1,6 @@
+[submodule "falcon/detectors/core_detectors"]
+	path = falcon/detectors/core_detectors
+	url = https://github.com/MetaTrustLabs/falcon-metatrust-core-detectors.git
+[submodule "falcon/detectors/periphery_detectors"]
+	path = falcon/detectors/periphery_detectors
+	url = https://github.com/MetaTrustLabs/falcon-metatrust-periphery-detectors.git

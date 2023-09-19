@@ -1,0 +1,12 @@
+Dockerfile
+Dockerfile_mt
+examples
+plugin_example
+plugin-metatrust
+build
+dist
+tests
+test-projects
+\.*
+.git
+venv

@@ -1,0 +1,38 @@
+from typing import Optional, Union, TYPE_CHECKING
+
+from falcon.core.expressions.expression import Expression
+from falcon.utils.arithmetic import convert_subdenomination
+
+if TYPE_CHECKING:
+    from falcon.core.solidity_types.type import Type
+
+
+class Literal(Expression):
+    def __init__(self, value, custom_type, subdenomination=None):
+        super().__init__()
+        self._value: Union[int, str] = value
+        self._type = custom_type
+        self._subdenomination: Optional[str] = subdenomination
+
+    @property
+    def value(self) -> Union[int, str]:
+        return self._value
+
+    @property
+    def type(self) -> "Type":
+        return self._type
+
+    @property
+    def subdenomination(self) -> Optional[str]:
+        return self._subdenomination
+
+    def __str__(self):
+        if self.subdenomination:
+            return str(convert_subdenomination(self._value, self.subdenomination))
+        # be sure to handle any character
+        return str(self._value)
+
+    def __eq__(self, other):
+        if not isinstance(other, Literal):
+            return False
+        return (self.value, self.subdenomination) == (other.value, other.subdenomination)

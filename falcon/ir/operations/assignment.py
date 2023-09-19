@@ -1,0 +1,45 @@
+import logging
+
+from falcon.core.declarations.function import Function
+from falcon.ir.operations.lvalue import OperationWithLValue
+from falcon.ir.utils.utils import is_valid_lvalue, is_valid_rvalue
+from falcon.ir.variables import TupleVariable, ReferenceVariable
+
+logger = logging.getLogger("AssignmentOperationIR")
+
+
+class Assignment(OperationWithLValue):
+    def __init__(self, left_variable, right_variable, variable_return_type):
+        assert is_valid_lvalue(left_variable)
+        assert is_valid_rvalue(right_variable) or isinstance(
+            right_variable, (Function, TupleVariable)
+        )
+        super().__init__()
+        self._variables = [left_variable, right_variable]
+        self._lvalue = left_variable
+        self._rvalue = right_variable
+        self._variable_return_type = variable_return_type
+
+    @property
+    def variables(self):
+        return list(self._variables)
+
+    @property
+    def read(self):
+        return [self.rvalue]
+
+    @property
+    def variable_return_type(self):
+        return self._variable_return_type
+
+    @property
+    def rvalue(self):
+        return self._rvalue
+
+    def __str__(self):
+        if isinstance(self.lvalue, ReferenceVariable):
+            points = self.lvalue.points_to
+            while isinstance(points, ReferenceVariable):
+                points = points.points_to
+            return f"{self.lvalue} (->{points}) := {self.rvalue}({self.rvalue.type})"
+        return f"{self.lvalue}({self.lvalue.type}) := {self.rvalue}({self.rvalue.type})"

@@ -1,0 +1,16 @@
+crytic-compile==0.3.3
+et-xmlfile==1.1.0
+numpy==1.23.3
+openpyxl==3.0.10
+pandas==1.5.0
+prettytable==3.4.1
+pysha3==1.0.2
+python-dateutil==2.8.2
+pytz==2022.2.1
+six==1.16.0
+solc-select==1.0.3
+wcwidth==0.2.5
+typing-extensions==4.0.1
+z3-solver==4.11.2.0
+networkx==2.5.1
+openai==0.27.8

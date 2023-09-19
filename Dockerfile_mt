@@ -1,0 +1,11 @@
+FROM bigsml/ubuntu-python-npm:v0.3.0
+
+LABEL name=mt-static
+LABEL desc="Static Analyzer for Solidity"
+
+COPY . /opt/apps/falcon
+WORKDIR /opt/apps/falcon
+
+RUN python3 setup.py install
+RUN pip3 install -r requirements.txt
+CMD /bin/bash
