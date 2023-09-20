@@ -1,6 +1,7 @@
 # Note
 For developers familiar with Slither, you can directly navigate to the detectors interface to view the rules.
 https://github.com/MetaTrustLabs/falcon-metatrust/tree/main/falcon/detectors
+**We also have about 40 original rules that have not been released yet. In the future, we will gradually make the rule source code public.**
 # Falcon
 
 <img src="https://metatrust.io/logo.svg" alt="Metatrust Static Analysis Framework Logo" width="500" />
