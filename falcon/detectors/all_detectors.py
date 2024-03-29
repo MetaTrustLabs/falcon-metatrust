@@ -73,6 +73,23 @@ from .codestyle.function.void_function import VoidFunction
 from .codestyle.contract.unnecessary_reentrancy_guard import UnnecessaryReentrancyGuard
 from .codestyle.contract.unnecessary_public_function_modifier import UnnecessaryPublicFunctionModifier
 from .common.variables.state_var_uninitialized import StateVariableNotInitialized
+from .common.contract.price_manipulation_high import PriceManipulation
+from .common.contract.price_manipulation_low import PriceManipulationLow
+from .common.contract.price_manipulation_info import PriceManipulationInfo
+from .common.contract.defi_action_nested import DeFiActionNested
+from .common.contract.price_manipulation_medium import PriceManipulationMedium
+from .common.contract.centralized_medium import CentralizedRiskMEDIUM
+from .common.contract.centralized_low import CentralizedRiskLOW
+from .common.contract.centralized_info import CentralizedRiskInfo
+from .common.contract.centralized_other import CentralizedRiskOther
+from falcon.detectors.common.contract.k_value_error import KValueError
+from .common.contract.transaction_order_dependency_high import \
+    TransactionOrderDependencyHigh
+from .common.contract.transaction_order_dependency_medium import \
+    TransactionOrderDependencyMedium
+from .common.contract.transaction_order_dependency_low import TransactionOrderDependencyLow
+
+
 # from .common.functions.unprotected_setter import UnprotectedSetter
 # =======Halt for MetaScore=======
 # from .codestyle.statement.incorrect_strict_equality import IncorrectStrictEquality
