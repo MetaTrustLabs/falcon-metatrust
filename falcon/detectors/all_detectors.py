@@ -88,6 +88,7 @@ from .common.contract.transaction_order_dependency_high import \
 from .common.contract.transaction_order_dependency_medium import \
     TransactionOrderDependencyMedium
 from .common.contract.transaction_order_dependency_low import TransactionOrderDependencyLow
+from .common.contract.defi_action_nested import DeFiActionNested
 
 
 # from .common.functions.unprotected_setter import UnprotectedSetter
