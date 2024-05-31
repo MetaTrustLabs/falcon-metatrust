@@ -39,9 +39,13 @@ class PriceManipulationMedium(AbstractDetector):
     WIKI_DESCRIPTION = (
         "Price manipulation is a common attack in DeFi projects. "
     )
-    WIKI_EXPLOIT_SCENARIO = """"""
+    WIKI_EXPLOIT_SCENARIO = """
+        A malicious attacker can manipulate the price of a token by using a fake permit.
+    """
 
-    WIKI_RECOMMENDATION = """"""
+    WIKI_RECOMMENDATION = """
+        A malicious attacker can manipulate the price of a token by using a fake permit. To prevent this, it is recommended to use the `transferFrom` function with the `from` parameter set to `msg.sender` and the `permit` function to check the validity of the transfer.
+    """
     # Functions that may return abnormal values due to price manipulation
     ERC20_FUNCTION = [
     "balanceOf(address)",
